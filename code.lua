@@ -18,7 +18,7 @@ function module:require(package, version, update)
 end
 
 function module:test(pin)
-    return loadstring(game:HttpGet(paste:format(pin)))
+    return loadstring(game:HttpGet(paste:format(pin)))()
 end
 
 return setmetatable({}, module)
