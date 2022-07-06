@@ -13,7 +13,7 @@ function module:require(package, version, update)
     local link = link:format(package, version or "main")
     if self.__lib[link] and update ~= true then return self.__lib[link] end
 
-    self.__lib[link] = loadstring(game:HttpGet(link))
+    self.__lib[link] = loadstring(game:HttpGet(link))()
     return self.__lib[link]
 end
 
